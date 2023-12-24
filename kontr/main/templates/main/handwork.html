@@ -1,0 +1,20 @@
+{% extends 'main/layout.html'%}
+
+{% block title %}Работа с массивами{% endblock %}
+
+{% block content %}
+<div class="btns">
+    <a href="{% url 'hand' %}" class="glow-on-hover" type="button">Записать массив вручную</a>
+    <a href="{% url 'auto' %}" class="glow-on-hover" type="button">Взять массив из базы данных</a>
+</div>
+<div class="int">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="btns">
+            <button type="submit" name = "save_original" class="glow-on-hover" >Сохранить массив в базу</button>
+            <button type="submit" name = "save_sorted" class="glow-on-hover" >Отсортировать массив </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
