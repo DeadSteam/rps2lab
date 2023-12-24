@@ -1,23 +1,5 @@
 import random
 
-
-def create_array_manually():
-    n = int(input("Введите размер массива: "))
-    arr = []
-    for i in range(n):
-        value = int(input(f"Введите элемент {i + 1}: "))
-        arr.append(value)
-    return arr
-
-
-def create_array_random():
-    n = int(input("Введите размер массива: "))
-    min_value = int(input("Минимальное значение: "))
-    max_value = int(input("Максимальное значение: "))
-    arr = [random.randint(min_value, max_value) for _ in range(n)]
-    return arr
-
-
 def gnome_sort(arr):
     index = 0
     while index < len(arr):
