@@ -1,59 +1,56 @@
-body{
-    background: #f2f2f2 !important;
-    display: flex;
+body {
+    background: #f2f2f2 !important;  /* Задаем цвет фона для всего тела страницы с высоким приоритетом */
+    display: flex;  /* Используем flexbox для управления размещением элементов */
     width: 100%;
-    height: 100vh;
+    height: 100vh;  /* Задаем высоту вьюпорта (100% высоты экрана) */
     margin: 0;
     padding: 0;
-
 }
 
-main{
-    width:80%;
-    float:left;
-    display:inline-block;
-    flex-decoration:column;
-
+main {
+    width: 80%;
+    float: left;  /* Размещаем элемент слева с использованием float */
+    display: inline-block;  /* Устанавливаем как встроенный блок */
+    flex-decoration: column;  /* Возможная опечатка, вероятно, должно быть 'flex-direction' */
 }
 
-aside{
-    float: left;
-    wight: 20%;
+aside {
+    float: left;  /* Размещаем элемент слева с использованием float */
     padding: 1%;
-    height: 100vh;
-    color: #fff;
-    border-right: 5px solid #d6d6d6;
-    background-image: url(../main/back.jpg);
+    height: 100vh;  /* Задаем высоту вьюпорта (100% высоты экрана) */
+    color: #fff;  /* Задаем цвет текста */
+    border-right: 5px solid #d6d6d6;  /* Создаем правую границу */
+    background-image: url(../img/back.jpg);  /* Задаем фоновое изображение */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  /* Растягиваем фоновое изображение, чтобы покрыть весь блок */
 }
 
-aside ul li, aside ul a{
-    color: #fff	;
+aside ul li,
+aside ul a {
+    color: #fff;  /* Задаем цвет текста для элементов списка и ссылок */
     display: block;
     margin-top: 20px;
-    margin-left: -15px;
-
-    transition: transform .6s ease;
+    margin-left: -15px;  /* Отступ слева для коррекции выравнивания */
+    transition: transform .6s ease;  /* Добавляем анимацию эффекта при наведении на элементы */
     outline: none;
-    text-decoration: none;
+    text-decoration: none;  /* Убираем подчеркивание у ссылок */
 }
 
-aside ul li:hover, aside ul a:hover{
-    list-style: none
-    color: #A9A9A9;
-    text-decoration: none;
-    transform: scale(1.05);
+aside ul li:hover, aside ul a:hover {
+    list-style: none;  /* Убираем стандартные маркеры списка при наведении */
+    color: #A9A9A9;  /* Изменяем цвет текста при наведении */
+    text-decoration: none;  /* Убираем подчеркивание у ссылок при наведении */
+    transform: scale(1.05);  /* Применяем масштабирование при наведении */
 }
-
+/* Стили для кнопки с эффектом при наведении */
 .glow-on-hover {
-    float: up;
+    float: top; /* Отключение плавного подъема при нажатии */
     width: 230px;
     height: 50px;
     border: none;
     outline: none;
-    color: #000;
-    background: #fff;
+    color: #000; /* Цвет текста */
+    background: #fff; /* Фоновый цвет */
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -64,6 +61,7 @@ aside ul li:hover, aside ul a:hover{
     margin: 0 20px 20px 0;
 }
 
+/* Стили для подсветки кнопки при наведении */
 .glow-on-hover:before {
     display: block;
     padding: 10px 20px;
@@ -71,7 +69,7 @@ aside ul li:hover, aside ul a:hover{
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -83,51 +81,65 @@ aside ul li:hover, aside ul a:hover{
     border-radius: 10px;
 }
 
+/* Стили для кнопки при активном состоянии (нажатии) */
 .glow-on-hover:active:after {
     background: #D3D3D3;
 }
 
+/* Стили для подсветки кнопки при наведении */
 .glow-on-hover:hover:before {
     opacity: 1;
 }
 
+/* Стили для создания фона после кнопки */
 .glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #fff; /* Цвет фона */
     left: 0;
     top: 0;
     border-radius: 10px;
 }
 
+/* Анимация мерцания фона кнопки */
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
 
+/* Стили для обертки кнопок */
 .btns {
     width: 100%;
     float: left;
     text-align: center;
-    margin:20px auto;
+    margin: 20px auto; /* Внешние отступы */
     padding: 10px;
-
 }
-.int{
+
+/* Стили для блока с формой */
+.int {
     width: 100%;
     float: left;
     text-align: center;
 }
 
+/* Стили для формы */
 form {
     width: 50%;
     float: left;
     text-align: center;
     margin-left: 25%;
-    color: #808080;
+    color: #808080; /* Цвет текста в форме */
+}
 
+/* Стили для вывода результатов формы или данных */
+.formout {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
 }

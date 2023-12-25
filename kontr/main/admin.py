@@ -1,6 +1,5 @@
-from django.contrib import admin
+from django.contrib import admin  # Импортируем класс admin из модуля django.contrib
+from .models import ArrayDB  # Импортируем модель ArrayDB из текущего приложения
 
-from .models import ArrayDBS
-
-admin.site.register(ArrayDBS)
-
+# Регистрируем модель ArrayDB в административной панели Django
+admin.site.register(ArrayDB)
