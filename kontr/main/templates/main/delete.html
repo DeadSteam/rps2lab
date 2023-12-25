@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}Работа с массивами вручную{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+    <h1>Удаление массива</h1>  <!-- Заголовок страницы -->
+
+    <div class="formout">
+        <form method="post">  <!-- Форма с методом POST -->
+            {% csrf_token %}  <!-- CSRF-токен для безопасной отправки формы -->
+            <button type="submit" class="glow-on-hover">Удалить массив</button>  <!-- Кнопка для удаления массива -->
+            <a href="{% url 'indbwork' %}" class="glow-on-hover" type="button">Отмена</a>  <!-- Ссылка для отмены и возврата на предыдущую страницу -->
+        </form>
+    </div>
+
+    <style>
+        h1 {
+            width: 100%;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
