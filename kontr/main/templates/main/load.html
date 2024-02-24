@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}Все массивы{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+    {% for arr in all_dbs %}
+        <!-- Цикл для перебора массивов из базы данных -->
+        <div class="formout">
+            <h1>{{ arr.array_name }}</h1>  <!-- Заголовок с именем массива -->
+            <h3>{{ arr.array }}</h3><br>  <!-- Подзаголовок с содержимым массива -->
+        </div>
+    {% endfor %}
+{% endblock %}
+

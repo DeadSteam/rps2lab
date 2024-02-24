@@ -1,5 +1,6 @@
 import random
 
+
 def create_array_manually():
     n = int(input("Введите размер массива: "))
     arr = []
@@ -15,7 +16,8 @@ def create_array_random():
     max_value = int(input("Максимальное значение: "))
     arr = [random.randint(min_value, max_value) for _ in range(n)]
     return arr
-    
+
+
 def gnome_sort(arr):
     index = 0
     while index < len(arr):

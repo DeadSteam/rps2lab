@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}Работа с массивами из базы данных{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+    <div class="btns">
+        <a href="{% url 'hand' %}" class="glow-on-hover" type="button">Записать массив вручную</a>  <!-- Ссылка на страницу для записи массива вручную -->
+        <a href="{% url 'indbwork' %}" class="glow-on-hover" type="button">Взять массив из базы данных</a>  <!-- Ссылка на страницу для взятия массива из базы данных -->
+    </div>
+
+    {% for arr in all_dbs %}
+        <!-- Цикл для перебора массивов из базы данных -->
+        <div class="formout">
+            <h1>{{ arr.array_name }}</h1>  <!-- Заголовок с именем массива -->
+            <h3>{{ arr.array }}</h3><br>  <!-- Подзаголовок с содержимым массива -->
+            <a href="{% url 'detail' arr.id %}" class="glow-on-hover" type="button">Посмотреть детальнее</a>  <!-- Ссылка для просмотра деталей массива -->
+        </div>
+    {% endfor %}
+
+{% endblock %}

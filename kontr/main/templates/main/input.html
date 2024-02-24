@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}Работа с массивами{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+<div class="btns">
+    <a href="{% url 'hand' %}" class="glow-on-hover" type="button">Записать массив вручную</a>  <!-- Ссылка на страницу для записи массива вручную -->
+    <a href="{% url 'indbwork' %}" class="glow-on-hover" type="button">Взять массив из базы данных</a>  <!-- Ссылка на страницу для взятия массива из базы данных -->
+</div>
+{% endblock %}
+

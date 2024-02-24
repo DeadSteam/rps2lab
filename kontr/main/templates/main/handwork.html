@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}Работа с массивами вручную{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+<div class="btns">
+    <a href="{% url 'hand' %}" class="glow-on-hover" type="button">Записать массив вручную</a>  <!-- Ссылка на страницу для записи массива вручную -->
+    <a href="{% url 'indbwork' %}" class="glow-on-hover" type="button">Взять массив из базы данных</a>  <!-- Ссылка на страницу для взятия массива из базы данных -->
+</div>
+
+<div class="int">
+    <form method="post">  <!-- Форма с методом POST -->
+        {% csrf_token %}  <!-- CSRF-токен для безопасной отправки формы -->
+        {{ form.array_name }}<br>  <!-- Поле для ввода имени массива -->
+        {{ form.array }}  <!-- Поле для ввода массива -->
+
+        <div class="btns">
+            <button type="submit" name="save_original" class="glow-on-hover">Сохранить массив в базу</button>  <!-- Кнопка для сохранения исходного массива в базу данных -->
+            <button type="submit" name="save_sorted" class="glow-on-hover">Отсортировать массив</button>  <!-- Кнопка для сортировки массива -->
+        </div>
+    </form>
+</div>
+{% endblock %}
+

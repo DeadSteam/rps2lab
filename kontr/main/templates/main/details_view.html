@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}  <!-- Расширяем базовый шаблон 'layout.html' -->
+
+{% block title %}{{ arraydetail.array_name }}{% endblock %}  <!-- Определяем блок 'title' и устанавливаем его значение -->
+
+{% block content %}  <!-- Определяем блок 'content' -->
+    <div class="btns">
+        <a href="{% url 'hand' %}" class="glow-on-hover" type="button">Записать массив вручную</a>  <!-- Ссылка на страницу для записи массива вручную -->
+        <a href="{% url 'indbwork' %}" class="glow-on-hover" type="button">Взять массив из базы данных</a>  <!-- Ссылка на страницу для взятия массива из базы данных -->
+    </div>
+
+    <div class="formout">
+        <h1>{{ arraydetail.array_name }}</h1>  <!-- Заголовок страницы с именем массива -->
+        <p>{{ arraydetail.array }}</p>  <!-- Параграф с содержимым массива -->
+    </div>
+
+    <div class="btns">
+        <a href="{% url 'update' arraydetail.id %}" class="glow-on-hover" type="button">Редактировать массив</a>  <!-- Ссылка на страницу для редактирования массива -->
+        <a href="{% url 'delete' arraydetail.id %}" class="glow-on-hover" type="button">Удалить</a>  <!-- Ссылка для удаления массива -->
+    </div>
+{% endblock %}
